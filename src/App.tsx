@@ -1,5 +1,6 @@
 import * as React from "react";
 import parse from "html-react-parser";
+import { format } from "date-fns";
 import "./styles.css";
 
 export default function App() {
@@ -27,6 +28,10 @@ export default function App() {
               <div key={user.id}>
                 <p>
                   <strong>{parse(user.title.rendered)}</strong>
+                  <small>
+                    {" "}
+                    {format(new Date(user.date), "dd-MM-yyyy hh:mm:ss a")}
+                  </small>
                 </p>
 
                 <img
